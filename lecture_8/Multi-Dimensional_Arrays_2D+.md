@@ -416,6 +416,52 @@ The first dimension (`DIM1`) doesn't appear in the formula - it only determines 
 
 **Rule of thumb:** Only the leftmost `[]` can be empty.
 
+### Common Misconception: `[][SIZE]` Does NOT Mean Unlimited Rows
+
+A frequent misunderstanding is that `int arr[][SIZE]` gives you a dynamic or "boundless" number of rows. **This is false.** The array size is still fixed at compile time.
+
+**What actually happens:**
+```cpp
+const int SIZE = 4;
+
+// Compiler counts 3 rows from your initializer - array is FIXED at [3][4]
+int numbers[][SIZE] = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+
+// You CANNOT add more rows later:
+numbers[3] = {13, 14, 15, 16};  // ✗ ERROR - array size is fixed
+```
+
+**Where you CAN use `[][SIZE]`:**
+
+| Context | Example | Why It Works |
+|:--------|:--------|:-------------|
+| Declaration with initializer | `int arr[][4] = {{1,2,3,4}, {5,6,7,8}};` | Compiler counts rows |
+| Function parameter | `void func(int arr[][4], int rows);` | Column size for address calculation |
+
+**Where you CANNOT use `[][SIZE]`:**
+
+| Context | Example | Why It Fails |
+|:--------|:--------|:-------------|
+| Declaration without initializer | `int arr[][4];` | Compiler doesn't know how many rows to allocate |
+| Adding rows at runtime | `arr[newRow] = {...};` | Size is fixed at compile time |
+
+**Calculating Row Count at Runtime:**
+```cpp
+int numbers[][SIZE] = {{1,2,3,4}, {5,6,7,8}, {9,10,11,12}};
+
+// sizeof(numbers)    = total bytes of entire array
+// sizeof(numbers[0]) = bytes of one row
+int rows = sizeof(numbers) / sizeof(numbers[0]);  // Result: 3
+```
+
+**If You Need Truly Dynamic Rows:**
+- Use `vector<vector<int>>` (modern C++ approach)
+- Use dynamic memory with pointers (`int**`)
+
 ## Key Points to Remember
 
 1. 2D arrays are stored in **row-major order**
