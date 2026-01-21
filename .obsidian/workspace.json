@@ -1,0 +1,202 @@
+{
+  "main": {
+    "id": "40542108af41b27d",
+    "type": "split",
+    "children": [
+      {
+        "id": "4c06ce6c1830ccf3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4db34f2bf95b7b1a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "lecture_8/08_Arrays.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "08_Arrays"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d442ed5842518dce",
+    "type": "split",
+    "children": [
+      {
+        "id": "ca35bece91c72c0a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a67ca6539b8a08e1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "085a9fe5e46b6ff4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "0ed4232f8d289704",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "870bd57cee97d250",
+    "type": "split",
+    "children": [
+      {
+        "id": "21f630cb096f239a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2a198c33dab30bdc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "lecture_8/08_Arrays.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 08_Arrays"
+            }
+          },
+          {
+            "id": "8f1a4fc6e536a8c7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "lecture_8/08_Arrays.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 08_Arrays"
+            }
+          },
+          {
+            "id": "701dbf5334993977",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "20069880df073dbb",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "639c4da0af8d0d5e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "lecture_8/08_Arrays.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 08_Arrays"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "4db34f2bf95b7b1a",
+  "lastOpenFiles": [
+    "lecture_8/Multi-Dimensional_Arrays_2D+.md.tmp.9346.1769025535006",
+    "lecture_8/2D ARRAYS!.md",
+    "lecture_8/Multi-Dimensional_Arrays_2D+.md",
+    "lecture_8/08_Arrays.md",
+    "lecture_8/Lecture_8.md.tmp.9346.1769024406051",
+    "lecture_8/eight.cpp",
+    "lecture_8/eight.cpp.tmp.9346.1769024231620",
+    "lecture_6/06_Loops_And_Files.md",
+    "lecture_7/07_Functions.md",
+    "lecture_11/Lecture #11 - Tagged.pdf",
+    "lecture_10/INSTRUCTIONS.md",
+    "lecture_9/Lecture_9.md",
+    "lecture_9/Lecture #9  - Tagged.pdf"
+  ]
+}
