@@ -38,6 +38,29 @@ You can assign custom integer values to enum members:
 enum trafficLights { GREEN = 1, YELLOW = 2, RED = 4 };
 ```
 
+### Auto-Increment Behavior
+Values without explicit assignment auto-increment from the previous value:
+```cpp
+enum Roster {TOM = 98, BILL, MED, ELLEN = 97, JOHN}, person, roster;
+```
+
+| Identifier | Value | Why |
+|------------|-------|-----|
+| `TOM` | 98 | Explicitly set to 98 |
+| `BILL` | 99 | Auto-increments (98 + 1) |
+| `MED` | 100 | Auto-increments (99 + 1) |
+| `ELLEN` | 97 | Explicitly reset to 97 |
+| `JOHN` | 98 | Auto-increments (97 + 1) |
+
+**Note:** `TOM` and `JOHN` both equal 98 - enum values don't have to be unique.
+
+The `, person, roster` at the end declares two variables of type `Roster` on the same line. This is shorthand for:
+```cpp
+enum Roster {TOM = 98, BILL, MED, ELLEN = 97, JOHN};
+Roster person;
+Roster roster;
+```
+
 ### Operations on Enumeration Type
 - **No math operations** allowed: `popularSport = mySport + 1;` - **WRONG**
 - **Comparison operations** allowed (relational operators work):
