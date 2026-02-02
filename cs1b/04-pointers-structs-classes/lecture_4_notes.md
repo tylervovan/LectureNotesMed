@@ -99,6 +99,32 @@ When you increment a pointer, it moves by the **size of the data type**:
 - `int *ptr; ptr++;` moves the address by 4 bytes (size of int)
 - `char *ptr; ptr++;` moves the address by 1 byte (size of char)
 
+### ⚠️ Common Mistake: `*ptr++` vs `(*ptr)++`
+
+```cpp
+int x = 5;
+int *ptr = &x;
+
+*ptr++;    // ❌ NOT what you think!
+(*ptr)++;  // ✅ Increments the VALUE (x becomes 6)
+```
+
+**Why `*ptr++` doesn't work as expected:**
+- `++` has **higher precedence** than `*`
+- So `*ptr++` is parsed as `*(ptr++)` — increments the POINTER, then dereferences
+- The pointer moves to the next memory address (garbage), not incrementing x
+
+**What each expression does:**
+
+| Expression | Meaning | Result |
+|------------|---------|--------|
+| `*ptr++` | `*(ptr++)` | Dereference, THEN move pointer (returns old value) |
+| `(*ptr)++` | Increment value at ptr | x becomes 6 |
+| `++*ptr` | `++(*ptr)` | Increment value at ptr | x becomes 6 |
+| `*++ptr` | `*(++ptr)` | Move pointer first, then dereference |
+
+**Rule of thumb:** When in doubt, use parentheses `(*ptr)++` to make intent clear.
+
 ---
 
 ## Pointers as Function Parameters
