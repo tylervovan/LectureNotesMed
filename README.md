@@ -20,13 +20,13 @@
 ## 📁 Structure
 
 ```
-cs1a/           # CS1A - Introduction to Programming (C++)
-cs1b/           # CS1B - Data Structures (C++)
+cs1a/           # CS1A (C++)
+cs1b/           # CS1B (C++)
 ```
 
 ---
 
-## 📘 CS1A - Introduction to Programming
+## 📘 CS1A
 
 | # | Topic | Key Concepts |
 |---|-------|--------------|
@@ -43,7 +43,7 @@ cs1b/           # CS1B - Data Structures (C++)
 
 ---
 
-## 📗 CS1B - Data Structures
+## 📗 CS1B
 
 | # | Topic | Key Concepts |
 |---|-------|--------------|
@@ -68,7 +68,7 @@ Each lecture folder typically contains:
 ## 🔗 Directory
 
 <details>
-<summary>📁 <b>cs1a/</b> — Introduction to Programming</summary>
+<summary>📁 <b>cs1a/</b></summary>
 
 - [01-fundamentals](cs1a/01-fundamentals/)
 - [02-syntax-and-development](cs1a/02-syntax-and-development/)
@@ -84,7 +84,7 @@ Each lecture folder typically contains:
 </details>
 
 <details>
-<summary>📁 <b>cs1b/</b> — Data Structures</summary>
+<summary>📁 <b>cs1b/</b></summary>
 
 - [02-struct-header-example](cs1b/02-struct-header-example/)
 - [03-enum-typedef-recursion](cs1b/03-enum-typedef-recursion/)
