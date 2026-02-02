@@ -20,8 +20,8 @@
 ## 📁 Structure
 
 ```
-cs1a/           # CMPR 120 - Introduction to Programming (C++)
-cs1b/           # CMPR 121 - Data Structures (C++)
+cs1a/           # CS1A - Introduction to Programming (C++)
+cs1b/           # CS1B - Data Structures (C++)
 ```
 
 ---
