@@ -168,6 +168,110 @@ void displayName(char *pName)
 
 ---
 
+## Dynamic Memory (Heap Allocation)
+
+### Stack vs Heap
+
+| Stack | Heap |
+|-------|------|
+| Automatic cleanup | Manual cleanup (`delete`) |
+| Fast allocation | Slower allocation |
+| Limited size (~1MB) | Large, flexible |
+| Size known at compile time | Size can be decided at runtime |
+| Dies when scope ends | Lives until you `delete` it |
+
+```
+STACK (automatic)          HEAP (manual)
+┌─────────────┐           ┌─────────────┐
+│ ptr = 0x7F  │ ───────►  │     42      │
+└─────────────┘           └─────────────┘
+  (pointer var)             (actual data)
+```
+
+### The `new` Operator
+
+Allocates memory on the heap and returns a pointer to it:
+
+```cpp
+// Single value
+int* ptr = new int;        // Uninitialized
+int* ptr = new int(42);    // Initialized to 42
+
+// Array
+int* arr = new int[10];    // Array of 10 ints
+```
+
+### The `delete` Operator
+
+Frees heap memory — **you MUST do this or memory leaks!**
+
+```cpp
+int* ptr = new int(42);
+// ... use ptr ...
+delete ptr;       // Free single value
+ptr = nullptr;    // Good practice: avoid dangling pointer
+
+int* arr = new int[10];
+// ... use arr ...
+delete[] arr;     // Free array (note the [])
+arr = nullptr;
+```
+
+### Why Use Heap?
+
+**1. Data outlives the function:**
+```cpp
+int* createOnStack() {
+    int x = 42;
+    return &x;         // ❌ BAD: x dies, pointer is garbage
+}
+
+int* createOnHeap() {
+    int* p = new int(42);
+    return p;          // ✅ OK: heap memory survives
+}
+```
+
+**2. Size not known until runtime:**
+```cpp
+int n;
+cin >> n;
+// int arr[n];         // ❌ Can't do (size must be constant)
+int* arr = new int[n]; // ✅ Works! Decide size at runtime
+```
+
+**3. Need large amounts of memory** (stack is limited)
+
+### Common Mistakes
+
+```cpp
+// Memory leak — forgot to delete
+void bad() {
+    int* p = new int(5);
+}  // p dies but heap memory is lost forever!
+
+// Double delete — crashes!
+int* p = new int(5);
+delete p;
+delete p;  // ❌ CRASH!
+
+// Dangling pointer — points to freed memory
+int* p = new int(5);
+delete p;
+*p = 10;   // ❌ Undefined behavior! Memory already freed
+```
+
+### Best Practice Pattern
+
+```cpp
+int* ptr = new int(42);   // 1. Allocate
+// ... use ptr ...         // 2. Use
+delete ptr;                // 3. Free
+ptr = nullptr;             // 4. Nullify (prevents accidents)
+```
+
+---
+
 ## Structures (struct)
 
 A **structured data type** - a collection of components referred to by a single name.
