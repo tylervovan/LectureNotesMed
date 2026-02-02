@@ -65,8 +65,31 @@ Each lecture folder typically contains:
 
 ---
 
-## 🔗 Quick Links
+## 🔗 Directory
 
-- [CS1A Fundamentals](cs1a/01-fundamentals/)
-- [CS1A Arrays](cs1a/08-arrays/)
-- [CS1B Classes & OOP](cs1b/04-pointers-structs-classes/)
+```
+📂 LectureNotesMed
+├── 📁 cs1a/
+│   ├── 01-fundamentals
+│   ├── 02-syntax-and-development
+│   ├── 03-numeric-types-expressions
+│   ├── 04-input-output
+│   ├── 05-control-structures
+│   ├── 06-loops-and-files
+│   ├── 07-functions
+│   ├── 08-arrays
+│   ├── 09-cstrings-cctype
+│   └── 10-pointers-structs
+│
+└── 📁 cs1b/
+    ├── 02-struct-header-example
+    ├── 03-enum-typedef-recursion
+    ├── 04-pointers-structs-classes
+    ├── 06-advanced-file-ops
+    └── 07-classes
+```
+
+| Course | Browse |
+|--------|--------|
+| CS1A | [📂 View All](cs1a/) |
+| CS1B | [📂 View All](cs1b/) |
