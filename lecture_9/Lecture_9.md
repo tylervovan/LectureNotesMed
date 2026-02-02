@@ -104,24 +104,89 @@ char empty[30] = {'\0'};
 ## c-string Functions
 Requires `#include <cstring>` (or `<string.h>` in C).
 
-1.  **`strcpy_s(dest, src)`**: Copies `src` to `dest`.
-2.  **`strcat_s(dest, src)`**: Concatenates `src` onto `dest`.
-3.  **`strlen(str)`**: Returns the length (excluding null).
-4.  **`strcmp(str1, str2)`**: Compares strings case-sensitively. Returns 0 if equal.
-5.  **`_strcmpi(str1, str2)`**: Compares strings case-insensitively.
+### 1. `strcpy_s(dest, src)` - Copy String
+Copies the contents of `src` into `dest`, overwriting whatever was in `dest`.
 
-### Example Usage
+```cpp
+char source[20] = "Hello";
+char destination[20];
+
+strcpy_s(destination, source);
+
+cout << destination; // Output: Hello
+```
+
+### 2. `strcat_s(dest, src)` - Concatenate String
+Appends `src` to the end of `dest`. The destination must have enough space.
+
+```cpp
+char greeting[30] = "Hello";
+char name[10] = " World";
+
+strcat_s(greeting, name);
+
+cout << greeting; // Output: Hello World
+```
+
+### 3. `strlen(str)` - String Length
+Returns the number of characters in the string (excluding the null terminator).
+
+```cpp
+char word[20] = "Programming";
+
+cout << strlen(word); // Output: 11
+
+char empty[20] = "";
+cout << strlen(empty); // Output: 0
+```
+
+### 4. `strcmp(str1, str2)` - Compare Strings (Case-Sensitive)
+Compares two strings character by character. Returns:
+- `0` if strings are equal
+- Negative value if `str1` < `str2`
+- Positive value if `str1` > `str2`
+
+```cpp
+char word1[10] = "apple";
+char word2[10] = "apple";
+char word3[10] = "Apple";
+
+cout << strcmp(word1, word2); // Output: 0 (equal)
+cout << strcmp(word1, word3); // Output: positive ('a' > 'A' in ASCII)
+
+if (strcmp(word1, word2) == 0) {
+    cout << "The strings are equal";
+}
+```
+
+### 5. `_strcmpi(str1, str2)` - Compare Strings (Case-Insensitive)
+Same as `strcmp`, but ignores uppercase/lowercase differences.
+
+```cpp
+char word1[10] = "Hello";
+char word2[10] = "HELLO";
+char word3[10] = "hello";
+
+cout << _strcmpi(word1, word2); // Output: 0 (equal, ignoring case)
+cout << _strcmpi(word1, word3); // Output: 0 (equal, ignoring case)
+
+if (_strcmpi(word1, word2) == 0) {
+    cout << "The strings are equal (case-insensitive)";
+}
+```
+
+### Combined Example
 ```cpp
 char firstHalf[14] = "abcdefghijklm";
 char secondHalf[14] = "nopqrstuvwxyz";
 char alphabet[27];
 
-strcpy(alphabet, firstHalf);
-strcat(alphabet, secondHalf);
+strcpy_s(alphabet, firstHalf);    // alphabet = "abcdefghijklm"
+strcat_s(alphabet, secondHalf);   // alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-cout << alphabet; // abcdefghijklmnopqrstuvwxyz
-cout << strlen(firstHalf); // 13
-cout << strlen(alphabet); // 26
+cout << alphabet;                 // abcdefghijklmnopqrstuvwxyz
+cout << strlen(firstHalf);        // 13
+cout << strlen(alphabet);         // 26
 ```
 
 ## std::string Operations

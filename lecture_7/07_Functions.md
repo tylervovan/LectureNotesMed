@@ -1,6 +1,6 @@
 # Lecture 7: Functions
 
-## CS terms: 
+## CS terms:
 
 
 ## Procedural Programming

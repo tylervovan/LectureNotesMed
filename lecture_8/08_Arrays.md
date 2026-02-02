@@ -6,16 +6,16 @@
 - **Zero-based indexing** (starts at 0).
 - Size must be a **constant integer expression**.
 
-## in class notes 
+## in class notes
  - if you don't initialize with 0, your data gets filled with garbage
 	 - as soon as the ide sees the first one initialized as 0, the rest of the array will also be zero
 ``` C++
-int const SIZE = 100; 
+int const SIZE = 100;
 
 double score[SIZE] = [0];
 double score[SIZE] = []; //same thing
 
-double score[SIZE] = [100, 99.7, 87.2]; // the rest of the 97 values are filled with ZERO. 
+double score[SIZE] = [100, 99.7, 87.2]; // the rest of the 97 values are filled with ZERO.
 
 // for string, you don't need to initialize SINCE it wont give you garbage
 ```
@@ -48,11 +48,11 @@ float scores[20];
 const int SIZE = 4;
 int main()
 {
-int myArray[SIZE][SIZE][SIZE][SIZE] = {}; 
+int myArray[SIZE][SIZE][SIZE][SIZE] = {};
 
 //assigning a value to the first value of the array
 
-myArray[0][0][0][0] = 1; 
+myArray[0][0][0][0] = 1;
 
 }
 
