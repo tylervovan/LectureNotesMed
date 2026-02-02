@@ -67,22 +67,29 @@ Each lecture folder typically contains:
 
 ## 🔗 Directory
 
-📂 **LectureNotesMed**
-├── 📁 [**cs1a/**](cs1a/)
-│   ├── [01-fundamentals](cs1a/01-fundamentals/)
-│   ├── [02-syntax-and-development](cs1a/02-syntax-and-development/)
-│   ├── [03-numeric-types-expressions](cs1a/03-numeric-types-expressions/)
-│   ├── [04-input-output](cs1a/04-input-output/)
-│   ├── [05-control-structures](cs1a/05-control-structures/)
-│   ├── [06-loops-and-files](cs1a/06-loops-and-files/)
-│   ├── [07-functions](cs1a/07-functions/)
-│   ├── [08-arrays](cs1a/08-arrays/)
-│   ├── [09-cstrings-cctype](cs1a/09-cstrings-cctype/)
-│   └── [10-pointers-structs](cs1a/10-pointers-structs/)
-│
-└── 📁 [**cs1b/**](cs1b/)
-    ├── [02-struct-header-example](cs1b/02-struct-header-example/)
-    ├── [03-enum-typedef-recursion](cs1b/03-enum-typedef-recursion/)
-    ├── [04-pointers-structs-classes](cs1b/04-pointers-structs-classes/)
-    ├── [06-advanced-file-ops](cs1b/06-advanced-file-ops/)
-    └── [07-classes](cs1b/07-classes/)
+<details>
+<summary>📁 <b>cs1a/</b> — Introduction to Programming</summary>
+
+- [01-fundamentals](cs1a/01-fundamentals/)
+- [02-syntax-and-development](cs1a/02-syntax-and-development/)
+- [03-numeric-types-expressions](cs1a/03-numeric-types-expressions/)
+- [04-input-output](cs1a/04-input-output/)
+- [05-control-structures](cs1a/05-control-structures/)
+- [06-loops-and-files](cs1a/06-loops-and-files/)
+- [07-functions](cs1a/07-functions/)
+- [08-arrays](cs1a/08-arrays/)
+- [09-cstrings-cctype](cs1a/09-cstrings-cctype/)
+- [10-pointers-structs](cs1a/10-pointers-structs/)
+
+</details>
+
+<details>
+<summary>📁 <b>cs1b/</b> — Data Structures</summary>
+
+- [02-struct-header-example](cs1b/02-struct-header-example/)
+- [03-enum-typedef-recursion](cs1b/03-enum-typedef-recursion/)
+- [04-pointers-structs-classes](cs1b/04-pointers-structs-classes/)
+- [06-advanced-file-ops](cs1b/06-advanced-file-ops/)
+- [07-classes](cs1b/07-classes/)
+
+</details>
