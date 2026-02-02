@@ -553,6 +553,61 @@ public:
 };
 ```
 
+**You can mix access specifiers (but grouping is cleaner):**
+
+```cpp
+class Student {
+private:
+    string ssn;
+public:
+    string name;
+private:          // Can switch back
+    int secretScore;
+public:           // And again
+    int getScore();
+};
+```
+
+### C++ vs Python: Access Control
+
+| Python | C++ |
+|--------|-----|
+| `_private` is just a *hint* | `private:` is **enforced** by compiler |
+| Nothing stops `obj._private = 5` | `obj.secret = 5` → **compile error** |
+| "We're all adults here" | "The compiler is your parent" |
+
+**Python access levels (convention only):**
+
+```python
+class Student:
+    def __init__(self):
+        self.public = "anyone"      # Public
+        self._protected = "hint"    # Convention: please don't
+        self.__private = "mangled"  # Name mangling
+
+s = Student()
+s._protected = "works"     # ✅ Python trusts you
+s.__private              # ❌ AttributeError
+s._Student__private      # ✅ But you can still access it!
+```
+
+**C++ access levels (enforced):**
+
+```cpp
+class Student {
+private:
+    int secret = 42;
+public:
+    int score = 100;
+};
+
+Student s;
+cout << s.score;   // ✅ Works
+cout << s.secret;  // ❌ COMPILE ERROR: 'secret' is private
+```
+
+**TL;DR:** C++ is a locked door. Python is a door with a "Please Knock" sign.
+
 ### Member Functions
 
 Member functions can access all class members (private and public):
