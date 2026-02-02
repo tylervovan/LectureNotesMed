@@ -1,4 +1,4 @@
-# Lecture 4 - Pointers, Structures, Header Files
+# Lecture 4 - Pointers, Structures, Classes, Header Files
 
 ## Pointers
 
@@ -378,11 +378,247 @@ int main()
 
 ---
 
+---
+
+## Classes
+
+A **class** is similar to a struct but members are `private` by default. Use classes when you have member functions and need encapsulation.
+
+### Class vs Struct
+
+| Feature | Class | Struct |
+|---------|-------|--------|
+| Default access | `private` | `public` |
+| Use when | Have member functions | Simple data grouping |
+| Encapsulation | Better data protection | Less protection |
+
+### Class Definition
+
+```cpp
+class Student {
+private:           // Private by default (optional keyword)
+    string name;
+    int id;
+    double gpa;
+
+public:
+    // Member functions go here
+}; // Semicolon required!
+```
+
+### Access Specifiers
+
+- **`private`**: Only accessible by member functions of the same class
+- **`public`**: Accessible from anywhere in the program
+
+```cpp
+class Student {
+private:
+    string name;    // Hidden from outside
+    int id;
+    
+public:
+    void setName(string n);  // Interface to modify data
+    string getName();        // Interface to access data
+};
+```
+
+### Member Functions
+
+Member functions can access all class members (private and public):
+
+```cpp
+class Student {
+private:
+    string name;
+public:
+    void setName(string n) {
+        name = n;  // Can access private member
+    }
+    string getName() {
+        return name;
+    }
+};
+
+// Usage:
+Student s;
+s.setName("Alice");
+cout << s.getName();  // Outputs: Alice
+```
+
+### Defining Functions Outside the Class
+
+Use the **scope resolution operator** `::`:
+
+```cpp
+class Student {
+private:
+    string name;
+public:
+    void setName(string n);   // Declaration only
+    string getName();
+};
+
+// Definition outside class
+void Student::setName(string n) {
+    name = n;
+}
+
+string Student::getName() {
+    return name;
+}
+```
+
+---
+
+## Constructors
+
+A **constructor** initializes an object when it's created.
+
+**Rules:**
+- Same name as the class
+- No return type (not even `void`)
+- Called automatically when object is created
+- Can be overloaded
+
+### Default Constructor
+
+```cpp
+class Student {
+private:
+    string name;
+    int id;
+public:
+    Student() {           // Default constructor
+        name = "Unknown";
+        id = 0;
+    }
+};
+
+Student s;  // Constructor called automatically
+```
+
+### Parameterized Constructor
+
+```cpp
+class Student {
+public:
+    Student(string n, int i, double g) {
+        name = n;
+        id = i;
+        gpa = g;
+    }
+};
+
+Student s("Bob", 12345, 3.8);  // Pass arguments
+```
+
+### Constructor Overloading
+
+```cpp
+class Student {
+public:
+    Student() {                         // Default
+        name = "Unknown";
+        id = 0;
+    }
+    Student(string n, int i, double g) { // Parameterized
+        name = n;
+        id = i;
+        gpa = g;
+    }
+};
+
+Student s1;                    // Calls default
+Student s2("Bob", 123, 3.9);   // Calls parameterized
+```
+
+### Member Initializer List (Preferred)
+
+```cpp
+Student(string n, int i, double g) 
+    : name(n), id(i), gpa(g) {  // More efficient
+    // Constructor body (can be empty)
+}
+```
+
+---
+
+## Accessor and Mutator Functions
+
+### Accessor (Getter)
+Returns value of a private member:
+
+```cpp
+string getName() { return name; }
+double getGpa() { return gpa; }
+```
+
+### Mutator (Setter)
+Sets value with optional validation:
+
+```cpp
+void setGpa(double g) {
+    if (g >= 0.0 && g <= 4.0) {  // Validation!
+        gpa = g;
+    }
+}
+```
+
+---
+
+## Array of Objects
+
+```cpp
+const int SIZE = 3;
+Student students[SIZE];
+
+for (int i = 0; i < SIZE; i++) {
+    students[i].setName("Student " + to_string(i));
+    cout << students[i].getName() << endl;
+}
+```
+
+---
+
+## Objects as Function Parameters
+
+### Pass by Const Reference (Best Practice)
+
+```cpp
+void displayStudent(const Student &s) {
+    cout << s.getName() << endl;
+}
+
+Student student("Alice", 123, 3.9);
+displayStudent(student);  // No '&' in call
+```
+
+**Note:** Accessor functions should be marked `const`:
+```cpp
+string getName() const { return name; }
+```
+
+---
+
+## The `this` Pointer
+
+Implicit pointer to the calling object:
+
+```cpp
+void setName(string name) {
+    this->name = name;  // Disambiguate parameter from member
+}
+```
+
+---
+
 ## Quick Reference
 
 | Operator | Name | Usage |
 |----------|------|-------|
 | `&` | Address operator | Get memory address of a variable |
 | `*` | Dereference operator | Access value at pointer's address |
-| `.` | Dot operator | Access struct member directly |
-| `->` | Arrow operator | Access struct member via pointer |
+| `.` | Dot operator | Access struct/class member directly |
+| `->` | Arrow operator | Access struct/class member via pointer |
+| `::` | Scope resolution | Define member function outside class |
