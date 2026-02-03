@@ -5,45 +5,52 @@ When adding comments to C++ homework files, follow this format:
 ## File Header Comment
 ```cpp
 // Attached: HW [number] ([all part letters / numbers in folder])
-//
-//==============================================================================
+// =============================================================================
 // Program: [program name]
-//
-//==============================================================================
+// =============================================================================
 //
 // Programmer: [FULL NAME]
-// Class: CS 1A/1B
+// Class: CS1B
 // Instructor: Med Mogasemi
 //
-//==============================================================================
+// =============================================================================
+//
+// Description:
+// [Brief description of what the program does - 2-3 sentences max]
+// =============================================================================
 ```
 
-## Example
+## Function Header Comments
 ```cpp
-// Attached: HW 5 (Parts A, B, C)
+// =========== functionName =============================================
+// Brief description of what the function does
 //
-//==============================================================================
-// Program: Temperature Converter
-//
-//==============================================================================
-//
-// Programmer: Tyler Vovan
-// Class: CS 1B
-// Instructor: Med Mogasemi
-//
-//==============================================================================
-
-#include <iostream>
-using namespace std;
-
-int main() {
-    // Your code here
-    return 0;
-}
+// parameters: paramName - description of parameter
+// output: returnType - description of what is returned (or "none" for void)
+// ======================================================================
 ```
 
-## Tips
-- Always include the header at the **top** of every `.cpp` file you submit
-- Replace bracketed placeholders with actual values
-- Keep the divider lines consistent (use `=` characters)
-- For multi-part assignments, list all parts in the "Attached" line
+## Main Function Comment
+The `main` function should always have an empty comment block (no description):
+```cpp
+// =========== main =====================================================
+//
+// ======================================================================
+```
+
+## Inline Comments
+- Use `// end of functionName` after closing brace of each function
+- Use `// comment` for brief inline explanations of non-obvious logic
+- Comments should explain WHY, not WHAT (the code shows what)
+
+## Output Section
+```cpp
+/* ====== output =======
+
+[Paste sample program output here]
+
+*/
+```
+
+## Git Commit Rules
+- Do NOT include "Co-Authored-By: Claude" or any AI attribution in commit messages
